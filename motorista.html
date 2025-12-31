@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard do Motorista | Fretrans</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen p-6">
+
+<!-- Header -->
+<div class="flex justify-between items-center mb-8">
+  <h1 class="text-3xl font-extrabold">Olá, Motorista</h1>
+  <a href="index.html" class="text-indigo-400 hover:text-indigo-300 transition">
+    Sair
+  </a>
+</div>
+
+<!-- Grid Dashboard -->
+<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+  <!-- Status Card -->
+  <div class="bg-gray-800 p-6 rounded-2xl shadow-lg flex flex-col items-center">
+    <div class="text-4xl mb-2">🟢</div>
+    <h2 class="font-bold text-lg mb-1">Status</h2>
+    <p class="text-green-500 font-semibold">Disponível</p>
+  </div>
+
+  <!-- Pedidos Card -->
+  <div class="bg-gray-800 p-6 rounded-2xl shadow-lg flex flex-col items-center">
+    <div class="text-4xl mb-2">📦</div>
+    <h2 class="font-bold text-lg mb-1">Pedidos Hoje</h2>
+    <p class="text-indigo-400 font-semibold text-2xl">4</p>
+  </div>
+
+  <!-- Avaliação Card -->
+  <div class="bg-gray-800 p-6 rounded-2xl shadow-lg flex flex-col items-center">
+    <div class="text-4xl mb-2">⭐</div>
+    <h2 class="font-bold text-lg mb-1">Avaliação Média</h2>
+    <p class="text-yellow-400 font-semibold text-xl">⭐⭐⭐⭐☆</p>
+  </div>
+
+</div>
+
+<!-- Ações Rápidas -->
+<div class="mt-8 max-w-md mx-auto flex flex-col gap-4">
+  <button class="bg-indigo-600 py-3 rounded-lg hover:bg-indigo-700 transition font-semibold">
+    Iniciar Novo Transporte
+  </button>
+  <button class="bg-gray-700 py-3 rounded-lg hover:bg-gray-600 transition font-semibold">
+    Histórico de Entregas
+  </button>
+  <button class="bg-gray-700 py-3 rounded-lg hover:bg-gray-600 transition font-semibold">
+    Perfil e Configurações
+  </button>
+</div>
+
+</body>
+</html>

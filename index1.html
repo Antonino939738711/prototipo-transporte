@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Fretrans Express</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition">
+
+<!-- TOGGLE DARK MODE -->
+<button onclick="toggleDark()"
+  class="fixed top-4 right-4 z-50 bg-indigo-600 text-white px-3 py-2 rounded">
+  🌙
+</button>
+
+<!-- LOGIN -->
+<section id="login"
+  class="min-h-screen flex items-center justify-center bg-cover bg-center"
+  style="background-image:url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7')">
+
+  <div class="bg-black/70 p-6 rounded-xl w-full max-w-sm animate-fade">
+    <h1 class="text-2xl font-bold mb-4 text-center">Fretrans Express</h1>
+
+    <input class="w-full p-2 mb-3 rounded bg-gray-800 text-white" placeholder="Email">
+    <input type="password" class="w-full p-2 mb-4 rounded bg-gray-800 text-white" placeholder="Senha">
+
+    <button onclick="entrar()"
+      class="w-full bg-indigo-600 py-2 rounded hover:bg-indigo-700 transition">
+      Entrar
+    </button>
+  </div>
+</section>
+
+<!-- APP -->
+<section id="app" class="hidden p-4 max-w-7xl mx-auto animate-slide">
+
+  <h2 class="text-2xl font-bold mb-6">Painel Principal</h2>
+
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+    <!-- Transporte -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1597764699510-5e1c6f67d8bb">
+      <h3>🚚 Solicitar Transporte</h3>
+      <button onclick="openModal('transporte')">Solicitar</button>
+    </div>
+
+    <!-- Aluguer -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1615460549969-36fa19521a4f">
+      <h3>🚌 Aluguer de Carrinhas</h3>
+      <button onclick="openModal('aluguer')">Ver</button>
+    </div>
+
+    <!-- Compra -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+      <h3>🚗 Comprar Viatura</h3>
+      <button onclick="openModal('viaturas')">Comprar</button>
+    </div>
+
+    <!-- Motorista -->
+    <div class="card">
+      <h3>👨‍✈️ Dashboard Motorista</h3>
+      <button onclick="openModal('motorista')">Abrir</button>
+    </div>
+
+    <!-- Pagamento -->
+    <div class="card">
+      <h3>💳 Pagamento</h3>
+      <button onclick="openModal('pagamento')">Simular</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal"
+  class="hidden fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50">
+  <div class="bg-white dark:bg-gray-800 p-6 rounded-xl w-full max-w-md animate-scale">
+    <h3 id="modalTitle" class="text-xl font-bold mb-3"></h3>
+    <div id="modalContent"></div>
+    <button onclick="closeModal()"
+      class="mt-4 bg-red-500 text-white w-full py-2 rounded">
+      Fechar
+    </button>
+  </div>
+</div>
+
+<style>
+.card{
+  @apply bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition;
+}
+.card img{
+  @apply h-36 w-full object-cover rounded mb-3;
+}
+.card h3{
+  @apply font-bold mb-2;
+}
+.card button{
+  @apply bg-indigo-600 text-white px-4 py-2 rounded w-full;
+}
+
+.animate-fade{animation:fade .8s ease}
+.animate-slide{animation:slide .6s ease}
+.animate-scale{animation:scale .3s ease}
+
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes slide{from{transform:translateY(40px);opacity:0}to{opacity:1}}
+@keyframes scale{from{transform:scale(.8);opacity:0}to{opacity:1}}
+</style>
+
+<script>
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modalTitle");
+const modalContent = document.getElementById("modalContent");
+
+function entrar(){
+  document.getElementById("login").classList.add("hidden");
+  document.getElementById("app").classList.remove("hidden");
+}
+
+function openModal(type){
+  modal.classList.remove("hidden");
+
+  if(type==="pagamento"){
+    modalTitle.innerText="Pagamento";
+    modalContent.innerHTML=`
+      <p class="mb-2">Valor: 35.000 Kz</p>
+      <button class="bg-green-600 text-white w-full py-2 rounded">
+        Confirmar Pagamento
+      </button>`;
+  }
+
+  if(type==="motorista"){
+    modalTitle.innerText="Dashboard Motorista";
+    modalContent.innerHTML=`
+      <p>Status: Disponível</p>
+      <p class="mt-2">Pedidos Hoje: 3</p>`;
+  }
+
+  if(type==="transporte"){
+    modalTitle.innerText="Solicitar Transporte";
+    modalContent.innerHTML=`
+      <input class="border p-2 w-full mb-2" placeholder="Origem">
+      <input class="border p-2 w-full mb-2" placeholder="Destino">
+      <button class="bg-green-600 text-white w-full py-2 rounded">
+        Confirmar
+      </button>`;
+  }
+}
+
+function closeModal(){ modal.classList.add("hidden"); }
+
+function toggleDark(){
+  document.documentElement.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>

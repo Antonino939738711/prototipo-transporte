@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Administração | Fretrans Express</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex">
+
+<!-- Sidebar -->
+<aside class="w-64 bg-gray-800 p-6 flex flex-col">
+  <h2 class="text-2xl font-bold mb-8 text-indigo-400">Admin Panel</h2>
+  <nav class="flex flex-col gap-4 text-gray-300">
+    <a href="#" class="hover:text-white transition">Dashboard</a>
+    <a href="#" class="hover:text-white transition">Motoristas</a>
+    <a href="#" class="hover:text-white transition">Clientes</a>
+    <a href="#" class="hover:text-white transition">Viaturas</a>
+    <a href="#" class="hover:text-white transition">Pedidos</a>
+    <a href="index.html" class="hover:text-indigo-400 transition mt-auto">Sair</a>
+  </nav>
+</aside>
+
+<!-- Conteúdo principal -->
+<main class="flex-1 p-6 overflow-auto">
+
+  <!-- Cards resumo -->
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-8">
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center">
+      <h3 class="text-gray-400 mb-2">Motoristas</h3>
+      <p class="text-indigo-400 font-bold text-2xl">12</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center">
+      <h3 class="text-gray-400 mb-2">Clientes</h3>
+      <p class="text-indigo-400 font-bold text-2xl">34</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center">
+      <h3 class="text-gray-400 mb-2">Viaturas</h3>
+      <p class="text-indigo-400 font-bold text-2xl">20</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg text-center">
+      <h3 class="text-gray-400 mb-2">Pedidos</h3>
+      <p class="text-indigo-400 font-bold text-2xl">45</p>
+    </div>
+  </div>
+
+  <!-- Tabela de Motoristas (Exemplo) -->
+  <div class="bg-gray-800 rounded-2xl shadow-lg p-6 mb-8 overflow-x-auto">
+    <h3 class="text-xl font-bold mb-4">Motoristas</h3>
+    <table class="min-w-full text-left">
+      <thead class="border-b border-gray-700">
+        <tr>
+          <th class="py-2 px-4">Nome</th>
+          <th class="py-2 px-4">Email</th>
+          <th class="py-2 px-4">Status</th>
+          <th class="py-2 px-4">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-gray-700">
+          <td class="py-2 px-4">João Silva</td>
+          <td class="py-2 px-4">joao@gmail.com</td>
+          <td class="py-2 px-4 text-green-500">Ativo</td>
+          <td class="py-2 px-4 flex gap-2">
+            <button class="bg-indigo-600 px-3 py-1 rounded hover:bg-indigo-700 transition">Editar</button>
+            <button class="bg-red-600 px-3 py-1 rounded hover:bg-red-700 transition">Deletar</button>
+          </td>
+        </tr>
+        <tr class="border-b border-gray-700">
+          <td class="py-2 px-4">Maria Costa</td>
+          <td class="py-2 px-4">maria@gmail.com</td>
+          <td class="py-2 px-4 text-red-500">Inativo</td>
+          <td class="py-2 px-4 flex gap-2">
+            <button class="bg-indigo-600 px-3 py-1 rounded hover:bg-indigo-700 transition">Editar</button>
+            <button class="bg-red-600 px-3 py-1 rounded hover:bg-red-700 transition">Deletar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tabela de Viaturas (Exemplo) -->
+  <div class="bg-gray-800 rounded-2xl shadow-lg p-6 overflow-x-auto">
+    <h3 class="text-xl font-bold mb-4">Viaturas</h3>
+    <table class="min-w-full text-left">
+      <thead class="border-b border-gray-700">
+        <tr>
+          <th class="py-2 px-4">Modelo</th>
+          <th class="py-2 px-4">Preço</th>
+          <th class="py-2 px-4">Status</th>
+          <th class="py-2 px-4">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-gray-700">
+          <td class="py-2 px-4">Toyota Hilux</td>
+          <td class="py-2 px-4">8.500.000 Kz</td>
+          <td class="py-2 px-4 text-green-500">Disponível</td>
+          <td class="py-2 px-4 flex gap-2">
+            <button class="bg-indigo-600 px-3 py-1 rounded hover:bg-indigo-700 transition">Editar</button>
+            <button class="bg-red-600 px-3 py-1 rounded hover:bg-red-700 transition">Deletar</button>
+          </td>
+        </tr>
+        <tr class="border-b border-gray-700">
+          <td class="py-2 px-4">Ford Ranger</td>
+          <td class="py-2 px-4">9.700.000 Kz</td>
+          <td class="py-2 px-4 text-green-500">Disponível</td>
+          <td class="py-2 px-4 flex gap-2">
+            <button class="bg-indigo-600 px-3 py-1 rounded hover:bg-indigo-700 transition">Editar</button>
+            <button class="bg-red-600 px-3 py-1 rounded hover:bg-red-700 transition">Deletar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+</body>
+</html>

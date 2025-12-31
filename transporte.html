@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Solicitar Transporte | Fretrans</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
+
+<!-- Container -->
+<div class="w-full max-w-lg bg-gray-800 rounded-2xl shadow-xl p-6 md:p-8">
+
+  <!-- Cabeçalho -->
+  <div class="mb-6 text-center">
+    <div class="text-4xl mb-2"></div>
+    <h2 class="text-2xl font-extrabold">
+      Solicitar Transporte
+    </h2>
+    <p class="text-gray-400 text-sm mt-1">
+      Preencha os dados para simular um pedido de transporte.
+    </p>
+  </div>
+
+  <!-- Formulário -->
+  <form class="space-y-4">
+
+    <!-- Origem -->
+    <div>
+      <label class="text-sm text-gray-300">Origem</label>
+      <input
+        type="text"
+        placeholder="Ex: Luanda - Talatona"
+        class="w-full mt-1 p-3 rounded-lg bg-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      >
+    </div>
+
+    <!-- Destino -->
+    <div>
+      <label class="text-sm text-gray-300">Destino</label>
+      <input
+        type="text"
+        placeholder="Ex: Benguela - Centro"
+        class="w-full mt-1 p-3 rounded-lg bg-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      >
+    </div>
+
+    <!-- Tipo -->
+    <div>
+      <label class="text-sm text-gray-300">Tipo de Mercadoria</label>
+      <select
+        class="w-full mt-1 p-3 rounded-lg bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      >
+        <option>Mercadoria leve</option>
+        <option>Mercadoria pesada</option>
+        <option>Electrodomésticos</option>
+        <option>Material de construção</option>
+      </select>
+    </div>
+
+    <!-- Peso -->
+    <div>
+      <label class="text-sm text-gray-300">Peso aproximado</label>
+      <input
+        type="text"
+        placeholder="Ex: 500 kg"
+        class="w-full mt-1 p-3 rounded-lg bg-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      >
+    </div>
+
+    <!-- Botão -->
+    <button
+      type="button"
+      class="w-full mt-4 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 font-semibold transition"
+      onclick="simularPedido()"
+    >
+      Enviar Pedido
+    </button>
+
+  </form>
+
+  <!-- Simulação -->
+  <div id="resultado" class="hidden mt-6 bg-gray-900 p-4 rounded-lg text-center">
+    <p class="text-indigo-400 font-semibold">
+      Pedido enviado com sucesso 🚀
+    </p>
+    <p class="text-sm text-gray-400 mt-1">
+      Um motorista será atribuído em breve.
+    </p>
+  </div>
+
+</div>
+
+<script>
+function simularPedido(){
+  document.getElementById('resultado').classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Compra & Venda de Viaturas | Fretrans</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen p-6">
+
+<!-- Topbar -->
+<div class="flex items-center justify-between mb-6">
+  <a href="index.html" class="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition">
+    ← Voltar ao Início
+  </a>
+
+  <span class="text-sm text-gray-400">
+    Fretrans Express
+  </span>
+</div>
+
+<!-- Cabeçalho -->
+<header class="mb-8 text-center">
+  <h2 class="text-3xl font-extrabold mb-1">
+    🚗 Compra & Venda de Viaturas
+  </h2>
+  <p class="text-gray-400">
+    Encontre viaturas prontas para transporte e negócio.
+  </p>
+</header>
+
+<!-- Grid -->
+<section class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+  <!-- Card -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+    <div class="content">
+      <h3>Toyota Hilux</h3>
+      <p class="price">8.500.000 Kz</p>
+      <button onclick="comprar('Toyota Hilux', '8.500.000 Kz')" class="btn">
+        Comprar
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1549924231-f129b911e442">
+    <div class="content">
+      <h3>Mitsubishi Canter</h3>
+      <p class="price">12.300.000 Kz</p>
+      <button onclick="comprar('Mitsubishi Canter', '12.300.000 Kz')" class="btn">
+        Comprar
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068">
+    <div class="content">
+      <h3>Isuzu NKR</h3>
+      <p class="price">10.800.000 Kz</p>
+      <button onclick="comprar('Isuzu NKR', '10.800.000 Kz')" class="btn">
+        Comprar
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1593941707874-ef25b8f38c8d">
+    <div class="content">
+      <h3>Ford Ranger</h3>
+      <p class="price">9.700.000 Kz</p>
+      <button onclick="comprar('Ford Ranger', '9.700.000 Kz')" class="btn">
+        Comprar
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1603386329225-868f9b1b6b1d">
+    <div class="content">
+      <h3>Hyundai H100</h3>
+      <p class="price">6.200.000 Kz</p>
+      <button onclick="comprar('Hyundai H100', '6.200.000 Kz')" class="btn">
+        Comprar
+      </button>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- Modal -->
+<div id="modal" class="fixed inset-0 bg-black/70 hidden items-center justify-center">
+  <div class="bg-gray-800 p-6 rounded-xl max-w-sm w-full text-center">
+    <h3 class="text-xl font-bold mb-2" id="modalTitulo"></h3>
+    <p class="text-indigo-400 mb-4" id="modalPreco"></p>
+    <p class="text-gray-400 text-sm mb-4">
+      Simulação de compra concluída com sucesso.
+    </p>
+
+    <button onclick="fecharModal()" class="w-full bg-indigo-600 py-2 rounded-lg hover:bg-indigo-700">
+      Confirmar
+    </button>
+  </div>
+</div>
+
+<!-- Estilos -->
+<style>
+.card{
+  background:#1f2933;
+  border-radius:1rem;
+  overflow:hidden;
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-4px);
+}
+.card img{
+  height:170px;
+  width:100%;
+  object-fit:cover;
+}
+.content{
+  padding:1rem;
+}
+.content h3{
+  font-weight:700;
+  font-size:1.1rem;
+}
+.price{
+  color:#a5b4fc;
+  margin:.4rem 0;
+}
+.btn{
+  width:100%;
+  background:#4f46e5;
+  padding:.5rem;
+  border-radius:.5rem;
+  font-weight:600;
+}
+.btn:hover{
+  background:#4338ca;
+}
+</style>
+
+<script>
+function comprar(nome, preco){
+  document.getElementById('modalTitulo').innerText = nome;
+  document.getElementById('modalPreco').innerText = preco;
+  document.getElementById('modal').classList.remove('hidden');
+  document.getElementById('modal').classList.add('flex');
+}
+
+function fecharModal(){
+  document.getElementById('modal').classList.add('hidden');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Fretrans Express</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 min-h-screen flex items-center justify-center text-white">
+
+<section class="w-full max-w-md px-6">
+
+  <!-- Card -->
+  <div class="bg-gray-800 rounded-xl shadow-lg p-8">
+
+    <h1 class="text-3xl font-extrabold text-center mb-2 text-indigo-400">
+      Fretrans Express
+    </h1>
+    <p class="text-center text-gray-400 mb-6">
+      Acesso à plataforma
+    </p>
+
+    <!-- Email -->
+    <label class="block text-sm mb-1">Email</label>
+    <input
+      id="email"
+      type="email"
+      placeholder="email@exemplo.com"
+      class="w-full p-3 mb-4 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-600"
+    >
+
+    <!-- Senha -->
+    <label class="block text-sm mb-1">Senha</label>
+    <input
+      id="senha"
+      type="password"
+      placeholder="••••"
+      class="w-full p-3 mb-4 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-600"
+    >
+
+    <!-- Erro -->
+    <p id="erro" class="hidden text-red-400 text-sm mb-4 text-center">
+      Credenciais inválidas
+    </p>
+
+    <!-- Botão Entrar -->
+    <button
+      onclick="login()"
+      class="w-full bg-indigo-600 hover:bg-indigo-700 transition py-3 rounded-lg font-semibold mb-4"
+    >
+      Entrar
+    </button>
+
+    <!-- OU -->
+    <div class="flex items-center justify-center text-gray-400 mb-4">
+      <span class="border-b border-gray-600 w-full mr-2"></span>
+      <span class="text-xs">ou</span>
+      <span class="border-b border-gray-600 w-full ml-2"></span>
+    </div>
+
+    <!-- Botão Google -->
+    <button
+      onclick="loginGoogle()"
+      class="w-full flex items-center justify-center gap-2 bg-white text-gray-900 py-2 rounded-lg font-semibold hover:bg-gray-100 transition"
+    >
+      <img src="https://imagepng.org/wp-content/uploads/2019/08/google-icon.png" alt="Google" class="w-5 h-5">
+      Entrar com Google
+    </button>
+
+  </div>
+
+  <!-- Nota -->
+  <p class="text-center text-xs text-gray-500 mt-4">
+    Protótipo demonstrativo • Fretrans Express
+  </p>
+
+</section>
+
+<script>
+function login() {
+  const email = document.getElementById("email").value.trim();
+  const senha = document.getElementById("senha").value.trim();
+  const erro = document.getElementById("erro");
+
+  erro.classList.add("hidden");
+
+  if (email === "cliente@gmail.com" && senha === "1234") {
+    window.location.href = "dashboard.html";
+    return;
+  }
+
+  if (email === "motorista@gmail.com" && senha === "1234") {
+    window.location.href = "motorista.html";
+    return;
+  }
+
+  if (email === "admin@gmail.com" && senha === "1234") {
+    window.location.href = "admin.html";
+    return;
+  }
+
+  erro.classList.remove("hidden");
+}
+
+// Simulação login Google
+function loginGoogle() {
+  alert("Simulação de login via Google realizada!\nSerá redirecionado ao Dashboard do Cliente.");
+  window.location.href = "dashboard.html"; // simulando login
+}
+</script>
+
+</body>
+</html>
