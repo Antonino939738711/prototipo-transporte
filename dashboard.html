@@ -1,125 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<title>Painel do Cliente | Fretrans</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Cliente | Fretrans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilização customizada dos cards para efeitos de hover suaves */
+        .card {
+            background: #1f2937; /* gray-800 */
+            padding: 2rem;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: white;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #6366f1; /* indigo-500 */
+            background: #111827; /* gray-900 */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        .icon-container {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #818cf8; /* indigo-400 */
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: #9ca3af; /* gray-400 */
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-900 text-white min-h-screen">
+<body class="bg-gray-900 text-white min-h-screen font-sans">
 
-<!-- Topbar -->
-<header class="bg-gray-800 px-6 py-4 flex justify-between items-center shadow">
-  <h1 class="text-xl font-bold text-indigo-400">
-    Fretrans • Cliente
-  </h1>
+    <header class="bg-gray-800 px-6 py-4 flex justify-between items-center shadow-lg sticky top-0 z-50">
+        <h1 class="text-xl font-bold text-indigo-400 tracking-tight">
+            Fretrans <span class="text-white font-light text-sm ml-1">• Cliente</span>
+        </h1>
 
-  <div class="flex items-center gap-4">
-    <span class="text-sm text-gray-300">cliente@gmail.com</span>
-    <a href="login.html" class="text-sm text-red-400 hover:underline">
-      Sair
-    </a>
-  </div>
-</header>
+        <div class="flex items-center gap-6">
+            <span class="hidden sm:inline text-sm text-gray-400 font-medium">cliente@gmail.com</span>
+            <a href="login.html" class="text-sm font-bold text-red-400 hover:text-red-300 transition-colors">
+                Sair
+            </a>
+        </div>
+    </header>
 
-<!-- Conteúdo -->
-<main class="p-6">
+    <main class="max-w-7xl mx-auto p-6">
 
-  <!-- Boas-vindas -->
-  <section class="mb-8">
-    <h2 class="text-3xl font-extrabold mb-1">
-      Bem-vindo 👋
-    </h2>
-    <p class="text-gray-400">
-      Gere os seus transportes, pagamentos e serviços num só lugar.
-    </p>
-  </section>
+        <section class="mb-10 mt-4">
+            <h2 class="text-4xl font-extrabold mb-2 tracking-tight">
+                Bem-vindo 👋
+            </h2>
+            <p class="text-gray-400 text-lg">
+                Gerencie seus transportes, pagamentos e serviços em um único lugar.
+            </p>
+        </section>
 
-  <!-- Cards -->
-  <section class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <section class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
 
-    <!-- Solicitar Transporte -->
-    <a href="transporte.html" class="card">
-      <div class="icon">Solicitar Transporte</div>
-      <h3></h3>
-      <p>Crie um novo pedido de transporte.</p>
-    </a>
+            <a href="transporte.html" class="card">
+                <div class="icon-container">🚚</div>
+                <h3>Solicitar Transporte</h3>
+                <p>Crie um novo pedido de transporte de forma rápida e segura.</p>
+            </a>
 
-    <!-- Acompanhar Pedido -->
-    <a href="#" class="card">
-      <div class="icon">Acompanhar Pedido</div>
-      <h3></h3>
-      <p>Veja o estado do seu transporte em tempo real.</p>
-    </a>
+            <a href="#" class="card">
+                <div class="icon-container">📍</div>
+                <h3>Acompanhar Pedido</h3>
+                <p>Veja o estado e a localização do seu transporte em tempo real.</p>
+            </a>
 
-    <!-- Histórico -->
-    <a href="#" class="card">
-      <div class="icon">Histórico</div>
-      <h3></h3>
-      <p>Consulte transportes já realizados.</p>
-    </a>
+            <a href="#" class="card">
+                <div class="icon-container">📋</div>
+                <h3>Histórico</h3>
+                <p>Consulte todos os seus transportes já realizados anteriormente.</p>
+            </a>
 
-    <!-- Pagamentos -->
-    <a href="#" class="card">
-      <div class="icon">Pagamento</div>
-      
-      <p>Simule e visualize pagamentos.</p>
-    </a>
+            <a href="#" class="card">
+                <div class="icon-container">💳</div>
+                <h3>Pagamentos</h3>
+                <p>Simule custos, visualize faturas e gerencie seus pagamentos.</p>
+            </a>
 
-    <!-- Compra & Venda -->
-    <a href="viaturas.html" class="card">
-      <div class="icon">Compra & Venda</div>
-      <h3></h3>
-      <p>Negocie viaturas disponíveis.</p>
-    </a>
+            <a href="viaturas.html" class="card">
+                <div class="icon-container">🚗</div>
+                <h3>Compra & Venda</h3>
+                <p>Negocie e visualize viaturas disponíveis para aquisição.</p>
+            </a>
 
-    <!-- Perfil -->
-    <a href="#" class="card">
-      <div class="icon">👤</div>
-      <h3></h3>
-      <p>Gerencie seus dados pessoais.</p>
-    </a>
+            <a href="#" class="card">
+                <div class="icon-container">👤</div>
+                <h3>Meu Perfil</h3>
+                <p>Gerencie seus dados pessoais e preferências de conta.</p>
+            </a>
 
-    <!-- Suporte -->
-    <a href="#" class="card col-span-full lg:col-span-1">
-      <div class="icon">🛠️</div>
-      <h3>Suporte</h3>
-      <p>Fale com a equipe Fretrans.</p>
-    </a>
+            <a href="#" class="card sm:col-span-2 lg:col-span-1">
+                <div class="icon-container">🛠️</div>
+                <h3>Suporte</h3>
+                <p>Precisa de ajuda? Fale agora com a nossa equipe especializada.</p>
+            </a>
 
-  </section>
+        </section>
 
-</main>
+    </main>
 
-<!-- Estilos dos cards -->
-<style>
-.card{
-  background:#1f2933;
-  padding:2rem;
-  border-radius:1rem;
-  transition:.3s;
-  border:1px solid transparent;
-}
-.card:hover{
-  transform:translateY(-4px);
-  border-color:#6366f1;
-  background:#111827;
-}
-.card h3{
-  font-size:1.25rem;
-  font-weight:700;
-  margin-top:.75rem;
-}
-.card p{
-  color:#9ca3af;
-  font-size:.95rem;
-  margin-top:.25rem;
-}
-.icon{
-  font-size:2.2rem;
-}
-</style>
+    <footer class="mt-12 py-8 text-center text-gray-500 text-sm border-t border-gray-800">
+        &copy; 2025 Fretrans Logística. Todos os direitos reservados.
+    </footer>
 
 </body>
 </html>
