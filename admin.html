@@ -11,6 +11,18 @@
     .sidebar-transition {
         transition: transform 0.3s ease-in-out;
     }
+
+    /* Estilo para labels mobile que só aparecem em telas pequenas */
+    @media (max-width: 1023px) {
+        .mobile-label {
+            display: inline-block;
+            width: 80px;
+            font-weight: bold;
+            color: #818cf8; /* indigo-400 */
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+    }
 </style>
 </head>
 <body class="bg-gray-900 text-white min-h-screen flex overflow-x-hidden">
@@ -65,7 +77,7 @@
   </nav>
 </aside>
 
-<main class="flex-1 p-6 overflow-auto w-full">
+<main class="flex-1 p-4 md:p-6 overflow-auto w-full">
 
   <div class="flex justify-between items-center mb-8">
     <div class="flex items-center gap-4">
@@ -114,29 +126,60 @@
     </div>
   </div>
 
-  <div class="bg-gray-800 rounded-2xl shadow-lg p-6 overflow-x-auto border border-gray-700">
-    <h3 class="text-xl font-bold mb-4">Motoristas</h3>
-    <table class="min-w-full text-left">
-      <thead class="border-b border-gray-700">
-        <tr>
-          <th class="py-2 px-4 whitespace-nowrap">Nome</th>
-          <th class="py-2 px-4 whitespace-nowrap">Email</th>
-          <th class="py-2 px-4 whitespace-nowrap">Status</th>
-          <th class="py-2 px-4 whitespace-nowrap">Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="border-b border-gray-700">
-          <td class="py-2 px-4 whitespace-nowrap">João Silva</td>
-          <td class="py-2 px-4 whitespace-nowrap">joao@gmail.com</td>
-          <td class="py-2 px-4 text-green-500 whitespace-nowrap">Ativo</td>
-          <td class="py-2 px-4 flex gap-2">
-            <button class="bg-indigo-600 px-3 py-1 rounded hover:bg-indigo-700 transition text-sm">Editar</button>
-            <button class="bg-red-600 px-3 py-1 rounded hover:bg-red-700 transition text-sm">Deletar</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="bg-gray-800 rounded-2xl shadow-lg p-4 md:p-6 border border-gray-700">
+    <h3 class="text-xl font-bold mb-6">Lista de Motoristas</h3>
+    
+    <div class="overflow-x-auto">
+      <table class="min-w-full block lg:table">
+        <thead class="hidden lg:table-header-group border-b border-gray-700">
+          <tr>
+            <th class="py-3 px-4 text-left text-gray-400 font-medium">Nome</th>
+            <th class="py-3 px-4 text-left text-gray-400 font-medium">Email</th>
+            <th class="py-3 px-4 text-left text-gray-400 font-medium">Status</th>
+            <th class="py-3 px-4 text-right text-gray-400 font-medium">Ações</th>
+          </tr>
+        </thead>
+        <tbody class="block lg:table-row-group">
+          <tr class="block lg:table-row border-b border-gray-700 hover:bg-gray-750 transition">
+            <td class="block lg:table-cell py-3 px-4">
+                <span class="mobile-label lg:hidden">Nome:</span>João Silva
+            </td>
+            <td class="block lg:table-cell py-3 px-4">
+                <span class="mobile-label lg:hidden">Email:</span>joao@gmail.com
+            </td>
+            <td class="block lg:table-cell py-3 px-4">
+                <span class="mobile-label lg:hidden">Status:</span>
+                <span class="text-green-500 bg-green-500/10 px-2 py-1 rounded text-sm">Ativo</span>
+            </td>
+            <td class="block lg:table-cell py-3 px-4 lg:text-right">
+                <div class="flex lg:justify-end gap-2 mt-2 lg:mt-0">
+                    <button class="bg-indigo-600/20 text-indigo-400 border border-indigo-600/30 px-3 py-1.5 rounded hover:bg-indigo-600 hover:text-white transition text-sm">Editar</button>
+                    <button class="bg-red-600/20 text-red-400 border border-red-600/30 px-3 py-1.5 rounded hover:bg-red-600 hover:text-white transition text-sm">Deletar</button>
+                </div>
+            </td>
+          </tr>
+
+          <tr class="block lg:table-row border-b border-gray-700 hover:bg-gray-750 transition">
+            <td class="block lg:table-cell py-3 px-4">
+                <span class="mobile-label lg:hidden">Nome:</span>Maria Souza
+            </td>
+            <td class="block lg:table-cell py-3 px-4">
+                <span class="mobile-label lg:hidden">Email:</span>maria@fretrans.com
+            </td>
+            <td class="block lg:table-cell py-3 px-4">
+                <span class="mobile-label lg:hidden">Status:</span>
+                <span class="text-yellow-500 bg-yellow-500/10 px-2 py-1 rounded text-sm">Pendente</span>
+            </td>
+            <td class="block lg:table-cell py-3 px-4 lg:text-right">
+                <div class="flex lg:justify-end gap-2 mt-2 lg:mt-0">
+                    <button class="bg-indigo-600/20 text-indigo-400 border border-indigo-600/30 px-3 py-1.5 rounded hover:bg-indigo-600 hover:text-white transition text-sm">Editar</button>
+                    <button class="bg-red-600/20 text-red-400 border border-red-600/30 px-3 py-1.5 rounded hover:bg-red-600 hover:text-white transition text-sm">Deletar</button>
+                </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 </main>
